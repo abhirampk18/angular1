@@ -1,12 +1,15 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { BottomNavComponent } from './layout/bottom-nav/bottom-nav'; // no .component needed
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [
+    RouterModule,         // ✅ Needed for <router-outlet>
+    BottomNavComponent    // ✅ Your custom nav component
+  ],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
 })
-export class App {
-  protected readonly title = signal('angular-assessment');
-}
+export class App {}

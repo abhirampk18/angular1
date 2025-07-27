@@ -1,0 +1,25 @@
+<div class="bottom-nav">
+
+  <svg class="bottom-curl left" viewBox="0 0 50 50" preserveAspectRatio="none">
+    <path d="M 0 0 Q 25 50 50 0 Z" fill="#1a1a1a" />
+  </svg>
+
+
+  <svg class="bottom-curl right" viewBox="0 0 50 50" preserveAspectRatio="none">
+    <path d="M 0 0 Q 25 50 50 0 Z" fill="#1a1a1a" />
+  </svg>
+
+  <div class="underline"></div>
+
+  <div
+    class="nav-item"
+    *ngFor="let icon of icons; let i = index"
+    (mouseenter)="onHover(i)"
+    (touchstart)="onHover(i)"
+  >
+    <div class="icon-wrapper">
+      <div class="indicator" *ngIf="hoverIndex === i"></div>
+      <i [ngClass]="icon"></i>
+    </div>
+  </div>
+</div>
